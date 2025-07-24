@@ -7,34 +7,61 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+:root {
+    /* Financial theme with professional colors */
+    --background: 210 11% 15%;
+    --foreground: 210 11% 71%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 11% 18%;
+    --card-foreground: 210 11% 91%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 11% 18%;
+    --popover-foreground: 210 11% 91%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 200 100% 28%;
+    --primary-foreground: 210 11% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 11% 21%;
+    --secondary-foreground: 210 11% 81%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 11% 21%;
+    --muted-foreground: 210 11% 61%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 200 100% 35%;
+    --accent-foreground: 210 11% 96%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 11% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 11% 25%;
+    --input: 210 11% 21%;
+    --ring: 200 100% 35%;
+
+    /* Financial data colors */
+    --bull-green: 120 100% 25%;
+    --bull-green-light: 120 60% 45%;
+    --bear-red: 0 84% 50%;
+    --bear-red-light: 0 60% 65%;
+    --neutral-gray: 210 11% 45%;
+    
+    /* Volatility levels */
+    --volatility-low: 120 100% 25%;
+    --volatility-medium: 45 100% 45%;
+    --volatility-high: 0 84% 50%;
+    --volatility-extreme: 300 100% 40%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(200 100% 35%));
+    --gradient-bull: linear-gradient(135deg, hsl(var(--bull-green)), hsl(120 60% 35%));
+    --gradient-bear: linear-gradient(135deg, hsl(var(--bear-red)), hsl(0 60% 40%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 8px 32px hsl(210 11% 4% / 0.32);
+    --shadow-glow: 0 0 24px hsl(var(--primary) / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --radius: 0.5rem;
 
