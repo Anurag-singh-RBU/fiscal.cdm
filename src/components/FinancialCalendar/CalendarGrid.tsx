@@ -40,15 +40,16 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
   };
 
   return (
-    <div className="bg-card">
+    <div className="bg-card rounded-lg border border-border overflow-hidden">
       {/* Week day headers */}
-      <div className="grid grid-cols-7 border-b border-border">
+      <div className="grid grid-cols-7 border-b border-border bg-muted/30">
         {weekDays.map(day => (
           <div
             key={day}
-            className="p-3 text-center text-sm font-medium text-foreground/60 border-r border-border last:border-r-0"
+            className="p-2 sm:p-3 text-center text-xs sm:text-sm font-medium text-foreground/60 border-r border-border last:border-r-0"
           >
-            {day}
+            <span className="hidden sm:inline">{day}</span>
+            <span className="sm:hidden">{day.slice(0, 1)}</span>
           </div>
         ))}
       </div>

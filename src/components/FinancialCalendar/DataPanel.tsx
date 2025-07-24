@@ -62,14 +62,14 @@ export const DataPanel: React.FC<DataPanelProps> = ({
 
   return (
     <Card className={cn("h-fit", className)}>
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Activity className="w-5 h-5" />
+      <CardHeader className="pb-3 sm:pb-6">
+        <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
+          <Activity className="w-4 h-4 sm:w-5 sm:h-5" />
           {format(selectedDate, 'MMM dd, yyyy')}
         </CardTitle>
         {financialData && (
-          <div className="flex items-center gap-2">
-            <Badge variant={getVolatilityBadgeVariant()}>
+          <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2">
+            <Badge variant={getVolatilityBadgeVariant()} className="text-xs">
               {volatilityLevel.toUpperCase()} VOLATILITY
             </Badge>
             <div className="flex items-center gap-1">
@@ -86,73 +86,73 @@ export const DataPanel: React.FC<DataPanelProps> = ({
         )}
       </CardHeader>
       
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-4 sm:space-y-6 pt-0">
         {!financialData ? (
-          <p className="text-muted-foreground text-center py-4">
+          <p className="text-muted-foreground text-center py-4 text-sm">
             No data available for this date
           </p>
         ) : (
           <>
             {/* Price Information */}
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground flex items-center gap-2">
+            <div className="space-y-2 sm:space-y-3">
+              <h3 className="font-semibold text-foreground flex items-center gap-2 text-sm sm:text-base">
                 <DollarSign className="w-4 h-4" />
                 Price Data
               </h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <p className="text-xs text-muted-foreground">Open</p>
-                  <p className="font-medium">{formatCurrency(financialData.open)}</p>
+                  <p className="font-medium text-sm sm:text-base">{formatCurrency(financialData.open)}</p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Close</p>
-                  <p className="font-medium">{formatCurrency(financialData.close)}</p>
+                  <p className="font-medium text-sm sm:text-base">{formatCurrency(financialData.close)}</p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">High</p>
-                  <p className="font-medium text-bull">{formatCurrency(financialData.high)}</p>
+                  <p className="font-medium text-bull text-sm sm:text-base">{formatCurrency(financialData.high)}</p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Low</p>
-                  <p className="font-medium text-bear">{formatCurrency(financialData.low)}</p>
+                  <p className="font-medium text-bear text-sm sm:text-base">{formatCurrency(financialData.low)}</p>
                 </div>
               </div>
             </div>
 
             {/* Volume & Liquidity */}
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground flex items-center gap-2">
+            <div className="space-y-2 sm:space-y-3">
+              <h3 className="font-semibold text-foreground flex items-center gap-2 text-sm sm:text-base">
                 <Volume2 className="w-4 h-4" />
                 Market Activity
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 <div>
                   <p className="text-xs text-muted-foreground">Trading Volume</p>
-                  <p className="font-medium">{formatVolume(financialData.volume)}</p>
+                  <p className="font-medium text-sm sm:text-base">{formatVolume(financialData.volume)}</p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Liquidity</p>
-                  <p className="font-medium">{formatVolume(financialData.liquidity)}</p>
+                  <p className="font-medium text-sm sm:text-base">{formatVolume(financialData.liquidity)}</p>
                 </div>
                 {financialData.marketCap && (
                   <div>
                     <p className="text-xs text-muted-foreground">Market Cap</p>
-                    <p className="font-medium">{formatVolume(financialData.marketCap)}</p>
+                    <p className="font-medium text-sm sm:text-base">{formatVolume(financialData.marketCap)}</p>
                   </div>
                 )}
               </div>
             </div>
 
             {/* Volatility Analysis */}
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground flex items-center gap-2">
+            <div className="space-y-2 sm:space-y-3">
+              <h3 className="font-semibold text-foreground flex items-center gap-2 text-sm sm:text-base">
                 <Activity className="w-4 h-4" />
                 Volatility Analysis
               </h3>
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">Volatility</span>
-                  <span className="font-medium">{financialData.volatility.toFixed(2)}%</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">Volatility</span>
+                  <span className="font-medium text-sm sm:text-base">{financialData.volatility.toFixed(2)}%</span>
                 </div>
                 <div className="w-full bg-muted rounded-full h-2">
                   <div 
@@ -174,16 +174,16 @@ export const DataPanel: React.FC<DataPanelProps> = ({
             </div>
 
             {/* Technical Indicators */}
-            <div className="space-y-3">
-              <h3 className="font-semibold text-foreground">Technical Indicators</h3>
+            <div className="space-y-2 sm:space-y-3">
+              <h3 className="font-semibold text-foreground text-sm sm:text-base">Technical Indicators</h3>
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <div>
-                  <p className="text-muted-foreground">RSI</p>
-                  <p className="font-medium">{(Math.random() * 100).toFixed(1)}</p>
+                  <p className="text-muted-foreground text-xs">RSI</p>
+                  <p className="font-medium text-sm">{(Math.random() * 100).toFixed(1)}</p>
                 </div>
                 <div>
-                  <p className="text-muted-foreground">MACD</p>
-                  <p className="font-medium">{((Math.random() - 0.5) * 1000).toFixed(2)}</p>
+                  <p className="text-muted-foreground text-xs">MACD</p>
+                  <p className="font-medium text-sm">{((Math.random() - 0.5) * 1000).toFixed(2)}</p>
                 </div>
               </div>
             </div>

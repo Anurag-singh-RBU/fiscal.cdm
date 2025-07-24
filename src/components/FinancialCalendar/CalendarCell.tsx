@@ -58,13 +58,13 @@ export const CalendarCell: React.FC<CalendarCellProps> = ({
   return (
     <div
       className={cn(
-        "relative h-24 p-2 border border-border/50 cursor-pointer transition-all duration-200",
-        "hover:border-primary/50 hover:shadow-glow",
+        "relative h-16 sm:h-20 md:h-24 p-1 sm:p-2 border border-border/50 cursor-pointer transition-all duration-200",
+        "hover:border-primary/50 hover:shadow-glow active:scale-95",
         isToday && "ring-2 ring-primary",
         isSelected && "bg-primary/20 border-primary",
         !isInCurrentMonth && "opacity-40",
         !data && "bg-muted/30",
-        "group",
+        "group touch-manipulation",
         className
       )}
       style={getCellBackground()}
@@ -74,7 +74,7 @@ export const CalendarCell: React.FC<CalendarCellProps> = ({
     >
       {/* Date number */}
       <div className={cn(
-        "text-sm font-medium",
+        "text-xs sm:text-sm font-medium leading-none",
         isToday ? "text-primary" : "text-foreground/80"
       )}>
         {date.getDate()}
@@ -82,19 +82,21 @@ export const CalendarCell: React.FC<CalendarCellProps> = ({
 
       {/* Performance indicator */}
       {data && (
-        <div className="absolute top-2 right-2">
-          {getPerformanceIcon()}
+        <div className="absolute top-1 right-1 sm:top-2 sm:right-2">
+          <div className="w-2 h-2 sm:w-3 sm:h-3">
+            {getPerformanceIcon()}
+          </div>
         </div>
       )}
 
-      {/* Price display */}
+      {/* Price display - Mobile optimized */}
       {data && (
-        <div className="mt-1">
-          <div className="text-xs text-foreground/60">
+        <div className="mt-1 space-y-0.5">
+          <div className="text-[10px] sm:text-xs text-foreground/60 leading-none">
             {formatCurrency(data.close)}
           </div>
           <div className={cn(
-            "text-xs font-medium",
+            "text-[10px] sm:text-xs font-medium leading-none",
             performanceType === 'bull' ? "text-bull" : 
             performanceType === 'bear' ? "text-bear" : "text-neutral"
           )}>
@@ -106,7 +108,7 @@ export const CalendarCell: React.FC<CalendarCellProps> = ({
       {/* Volatility indicator (top border) */}
       {data && (
         <div 
-          className="absolute top-0 left-0 right-0 h-1 rounded-t"
+          className="absolute top-0 left-0 right-0 h-0.5 sm:h-1 rounded-t"
           style={{ backgroundColor: getVolatilityColor(volatilityLevel) }}
         />
       )}
@@ -114,8 +116,8 @@ export const CalendarCell: React.FC<CalendarCellProps> = ({
       {/* Liquidity indicator (bottom bar) */}
       {getLiquidityIndicator()}
 
-      {/* Hover overlay */}
-      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+      {/* Touch feedback overlay */}
+      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 group-active:opacity-20 transition-opacity pointer-events-none" />
     </div>
   );
 };

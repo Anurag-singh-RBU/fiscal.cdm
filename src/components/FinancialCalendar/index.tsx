@@ -74,10 +74,10 @@ export const FinancialCalendar: React.FC = () => {
         onSymbolChange={handleSymbolChange}
       />
       
-      <div className="container mx-auto p-4">
-        <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
-          {/* Calendar */}
-          <div className="xl:col-span-3">
+      <div className="container mx-auto p-2 sm:p-4">
+        <div className="flex flex-col gap-4 md:gap-6">
+          {/* Calendar - Always full width */}
+          <div className="w-full">
             <CalendarGrid
               currentDate={currentDate}
               calendarData={calendarCellData}
@@ -87,8 +87,8 @@ export const FinancialCalendar: React.FC = () => {
             />
           </div>
           
-          {/* Data Panel */}
-          <div className="xl:col-span-1">
+          {/* Data Panel - Bottom on mobile, side on desktop */}
+          <div className="w-full xl:max-w-md xl:mx-auto">
             <DataPanel
               selectedDate={selectedDate}
               financialData={selectedFinancialData}
