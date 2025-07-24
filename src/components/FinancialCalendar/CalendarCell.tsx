@@ -60,7 +60,7 @@ export const CalendarCell: React.FC<CalendarCellProps> = ({
       className={cn(
         "relative h-24 p-2 border border-border/50 cursor-pointer transition-all duration-200",
         "hover:border-primary/50 hover:shadow-glow",
-        isToday && "ring-2 ring-primary animate-pulse-glow",
+        isToday && "ring-2 ring-primary",
         isSelected && "bg-primary/20 border-primary",
         !isInCurrentMonth && "opacity-40",
         !data && "bg-muted/30",

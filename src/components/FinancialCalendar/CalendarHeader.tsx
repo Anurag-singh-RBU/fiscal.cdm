@@ -75,7 +75,7 @@ export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <TrendingUp className="w-6 h-6 text-primary" />
-            <h1 className="text-2xl font-bold text-foreground">Financial Calendar</h1>
+            <h1 className="text-2xl font-bold text-foreground">Fiscal Calendar</h1>
           </div>
           
           {/* Symbol selector */}
