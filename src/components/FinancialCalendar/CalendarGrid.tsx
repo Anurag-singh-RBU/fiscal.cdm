@@ -8,7 +8,7 @@ interface CalendarGridProps {
   calendarData: CalendarCellData[];
   selectedDate: Date | null;
   onDateSelect: (date: Date) => void;
-  onDateHover: (date: Date, data?: any) => void;
+  onDateHover: (date: Date, data?: unknown) => void;
 }
 
 export const CalendarGrid: React.FC<CalendarGridProps> = ({

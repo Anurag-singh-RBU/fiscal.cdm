@@ -75,7 +75,7 @@ export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-3">
             <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
-            <h1 className="text-xl sm:text-2xl font-bold text-foreground">Fiscal</h1>
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground">fiscal.cdm</h1>
           </div>
           
           {/* Symbol selector */}

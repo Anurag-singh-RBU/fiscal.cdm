@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 interface CalendarCellProps {
   cellData: CalendarCellData;
   onClick: (date: Date) => void;
-  onHover: (date: Date, data?: any) => void;
+  onHover: (date: Date, data?: unknown) => void;
   className?: string;
 }
 
