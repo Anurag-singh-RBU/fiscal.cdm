@@ -57,5 +57,10 @@ Fiscal.cdm is a calendar-based financial data visualization tool designed to ana
 3. Run the Server :
    ```bash
    npm run dev
+
+---
+
+Author : Anurag Singh
+
   
 
