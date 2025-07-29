@@ -23,12 +23,12 @@ Fiscal.cdm is a calendar-based financial data visualization tool designed to ana
 
 ## Tech Stack
 
-### Frontend:
+### Frontend :
 - **React** with **TypeScript**
 - **Vite** (or Create React App , depending on setup)
 - **Tailwind CSS** for UI styling
 
-### Key Libraries:
+### Key Libraries :
 - `date-fns` – Date manipulation and formatting
 - `lucide-react` – Icons
 - `html2canvas` – Convert DOM elements to image
