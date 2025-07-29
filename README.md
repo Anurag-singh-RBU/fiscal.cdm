@@ -1,6 +1,6 @@
-# FiscalCDM
+# Fiscal CDM
 
-FiscalCDM is a calendar-based financial data visualization tool designed to analyze cryptocurrency market trends. It provides users with an intuitive interface to explore market performance , volatility , and other technical indicators over time. The tool supports multiple timeframes and allows PDF exports for reporting purposes.
+Fiscal.cdm is a calendar-based financial data visualization tool designed to analyze cryptocurrency market trends. It provides users with an intuitive interface to explore market performance , volatility , and other technical indicators over time. The tool supports multiple timeframes and allows PDF exports for reporting purposes.
 
 ---
 
